@@ -20,8 +20,10 @@ const component = (age, job) => {
     }
   }
   return `
-  <h1>${dbj.name}</h1>
+  <h1>${obj.name}</h1>
   <h2>${innerFunc()}</h2>
   <h3>${auotherFunc()}</h3>
   `;
 }
+
+console.log(component());
