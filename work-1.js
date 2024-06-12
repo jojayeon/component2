@@ -18,9 +18,9 @@ class BasicData {
   }
   set name(vlaue) {
     if(typeof(vlaue) === "string") {    
-      
+      this._name = vlaue;
     }else {
-
+      throw new Error("에렁~!");
     }
   }
   
@@ -29,9 +29,9 @@ class BasicData {
   }
   set age(nage) {
     if(typeof(nage) === "number") {
-      
+      this._age = nage;
     }else {
-
+      throw new Error("에렁~!");
     }
     
   }
@@ -41,18 +41,35 @@ class BasicData {
   }
   set job(vlaue) {
     if(typeof(vlaue) === "string") {    
-      
+      this._job = vlaue;
     }else {
-      throw new ;
+      throw new Error("에렁~!");
     }
   }
 }
 
 
  const component = () => {
-  let obj = new basicData("조자연",26, "학생");
+  let obj = new BasicData("조자연",26, "학생");
 
-  const decision = () => {};
+  const decision = () => {
+    if (obj instanceof BasicData) {
+      
+      return `
+<html>
+  <body>
+    <h1>이름: ${obj.name}</h1>
+    <h2>나이: ${obj.age}</h2>
+    <h3>직업: ${obj.job}</h3>
+  </body>
+</html>
 
-  return `<html></html>`;
+      `;
+    } else {
+      console.error('규격 미달');
+    }
+  };
+
+  return decision();
 }
+console.log(component());
