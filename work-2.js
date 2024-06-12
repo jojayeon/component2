@@ -1,12 +1,12 @@
-const component = () => {
+const component = (age, job) => {
   let obj = {
     name : "조자연",
-    age : 26,
-    job : "ㅇㅇ"
+    age : age,
+    job : job
   };
   
   let innerFunc = () => {
-    if(obj.age > 20) {
+    if(obj.age >= 20) {
       return "여름엔 맥주지!!!!"
     } else {
       return "여름엔 오구르트지!!!!"
