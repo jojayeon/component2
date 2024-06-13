@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    // const divm = () => {
+    //   const root = document.getElementById("root")
+    // }
+const getUserInfo = () => {
+  return {
+    name : "자연",
+    age : 26, 
+    job: "dd",
+  };
+};
+
+    const formcomponent = (action, method) => {
+      const userInfo = getUserInfo();
+      return ` 
+      <form action="${action}" method="${method}">
+        <label for="name">이름</label>
+        <input type="text" value="${userInfo.name}">
+        <label for="age">나이</label>
+        <input type="text" value="${userInfo.age}">
+        <label for="job">설명</label>
+        <input type="text" value="${userInfo.job}">
+        <button type="submit">제출</button>
+      </form>
+      `
+    }
+
+    const App = (formAction, formMethod) => `
+      <h1>함수의 리턴</h1>
+      <h2>머리가 맑게</h2>
+      ${formcomponent(formAction, formMethod)}
+    `;
+
+    const renderApp = (formAction, formMethod) => {
+      const appDIV = document.getElementById("root")
+      appDIV.innerHTML = App(formAction, formMethod);
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderApp("/submit", "post")
+    })
+
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+
+const component = (food1, food2, food3) => {
+  let obj = {
+        food1: food1, 
+        food2: food2,
+        food3: food3,
+      };
+  const no52 = () => {
+    let a = component("오이", "김밥", "양념갈비");
+    for (let key in a) {
+      if (key === "오이") {
+        throw new Error("오이!!!!!!!!!!!!!시러!!!!!!")
+      }else {
+        key[2] = "오이 대신 햄"
+      }
+    }
+  }
+
+  return `
+  <div>${food1}</div>
+  <div>${food2}</div>
+  <div>${food3}</div>
+  `
+  
+}
+
+let a = component("오이", "김밥", "양념갈비");
+
+// component("오이", "김밥", "양념갈비");
+// console.log(a)
+
+  
+function st() {
+    const root = document.getElementById("root");
+    root.innerHTML(a);
+}
+console.log(st)
+//<!-- todo
+st()
+
+
+
+  </script>
+</body>
+</html>
