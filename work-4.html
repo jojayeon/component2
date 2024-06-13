@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>무긍무진한 컴포넌트 응용</title>
+  <title>무궁무진한 컴포넌트 응용</title>
 </head>
 <body>
   <div id="root"></div>
@@ -13,7 +13,7 @@
       return`
       <form action="${action}" method="${method}" id="user-form">
         ${content}
-      <button type="button" id="submit-button">콜솔 확인하기</button>
+      <button type="button" id="submit-button">콘솔 확인하기</button>
       </form>
       `;
     };
@@ -24,6 +24,8 @@
       <input type="text" id="${id}" name="${name}" value="${value}" required>
       `;
     };
+
+
 
     const component = (name, age, job) => {
       let obj = {
@@ -45,24 +47,27 @@
   };
 
 
+  
   function renderApp() {
     const root = document.getElementById("root");
-    root.innerHTML = component("조자연", 26, "ㅇㅇ~~학생")
+    root.innerHTML = component("조자연", 26, "백숙")
     
-    const submitButton = document.getElementById("submit-button");
-    
-    submitButton.addEventListener("click", () => {
-      const form = document.getElementById("user-form");
-      const formData = new FormData(form);
 
-      const data = {};
-      formData.forEach((value, key) => {
-        data[key] = value;
-      });
-      console.log(data);
-    });
+    // // 여기는 클릭만 관여
+    // const submitButton = document.getElementById("submit-button");
+    
+    // submitButton.addEventListener("click", () => {
+    //   const form = document.getElementById("user-form");
+    //   const formData = new FormData(form);
+
+    //   const data = {};
+    //   formData.forEach((value, key) => {
+    //     data[key] = value;
+    //   });
+    //   console.log(data);// 이부분은 뭐지
+    // });
   }
-  window.addEventListener("DOMContentLoaded", renderApp);
+  // window.addEventListener("DOMContentLoaded", renderApp);
   </script>
 </body>
 </html>
