@@ -19,6 +19,7 @@ console.log(component("오이", "김밥", "양념갈비"))
 for(let key in a){
   console.log(key);// 키
   console.log(a[key]);// 값
+  console.log(a.food1);// 값
 }
 
 
