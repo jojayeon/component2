@@ -48,7 +48,6 @@ class BasicData {
   }
 }
 
-
  const component = () => {
   let obj = new BasicData("조자연",26, "학생");
 

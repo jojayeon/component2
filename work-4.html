@@ -53,21 +53,21 @@
     root.innerHTML = component("조자연", 26, "백숙")
     
 
-    // // 여기는 클릭만 관여
-    // const submitButton = document.getElementById("submit-button");
+    // 여기는 클릭만 관여
+    const submitButton = document.getElementById("submit-button");
     
-    // submitButton.addEventListener("click", () => {
-    //   const form = document.getElementById("user-form");
-    //   const formData = new FormData(form);
+    submitButton.addEventListener("click", () => {
+      const form = document.getElementById("user-form");
+      const formData = new FormData(form);
 
-    //   const data = {};
-    //   formData.forEach((value, key) => {
-    //     data[key] = value;
-    //   });
-    //   console.log(data);// 이부분은 뭐지
-    // });
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+      console.log(data);// 이부분은 뭐지
+    });
   }
-  // window.addEventListener("DOMContentLoaded", renderApp);
+  window.addEventListener("DOMContentLoaded", renderApp);
   </script>
 </body>
 </html>
